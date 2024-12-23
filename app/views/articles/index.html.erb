@@ -1,0 +1,32 @@
+<%= render_if(@featured[0].present?, 'longer_featured', article: @featured[0]) %>
+<div class="row mb-2">
+    <%= render_if(@featured[1].present?, 'medium_featured', article: @featured[1]) %>
+    <%= render_if(@featured[2].present?, 'medium_featured', article: @featured[2]) %>
+</div>
+<div class="row g-5">
+    <div class="col-md-8">
+        <h3 class="pb-4 mb-4 fst-italic border-bottom text-light">
+          From my experience
+        </h3>
+        <p class="text-light">
+            <%= new_article_link %>
+        </p>
+        <%= render @articles %>
+        <%= render 'pagination' %>
+    </div>
+
+    <div class="col-md-4">
+        <%= render "right_side" %>
+    </div>
+</div>
+
+<%= content_for :category_filter do %>
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <% @categories.each do |category| %>
+                <%= link_to category.name, root_path(category: category.name),
+                     class: "p-2 link-light #{'category-active' if category.name.to_s == params[:category]}" %>
+            <% end %>
+        </nav>
+    </div>
+<% end %>

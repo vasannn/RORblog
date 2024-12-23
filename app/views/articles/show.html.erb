@@ -1,0 +1,16 @@
+<article class="blog-post bg-dark text-light">
+  <h2 class="blog-post-title text-light"><%= @article.title %></h2>
+  <p class="blog-post-meta text-light">
+    <%= render 'article_detail', article: @article %>
+  </p>
+  <p class="text-light"><%= @article.body %></p>
+  <%= link_to "Go Back", root_path, class: 'btn btn-outline-light' %>
+  <%= edit_article_link(@article) %>
+  <%= delete_article_link(@article) %>
+
+  <h3 class="mt-4 text-light">Comments</h3>
+  <%= comments %>
+
+  <h4 class="mt-4 text-light">Add a comment:</h4>
+  <%= add_comment %>
+</article>

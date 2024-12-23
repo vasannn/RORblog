@@ -1,0 +1,7 @@
+<p style="color: #ffffff;">Welcome <%= @email %>!</p>
+
+<p style="color: #ffffff;">Thank You for visiting my Rails App. You can confirm your account email through the link below:</p>
+
+<p>
+  <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), style: "color: #add8e6; font-weight: bold;" %>
+</p>

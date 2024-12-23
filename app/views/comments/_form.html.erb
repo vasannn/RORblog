@@ -1,0 +1,9 @@
+<%= simple_form_for [@article, @article.comments.build] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :body, input_html: { rows: 8, class: 'bg-dark text-light' }, label_html: { class: 'text-light' } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-outline-light' %>
+  </div>
+<% end %>

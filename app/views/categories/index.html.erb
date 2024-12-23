@@ -1,0 +1,24 @@
+<h1 class="text-light">Categories</h1>
+<p>
+    <%= link_to 'Create New Category', new_category_path, class: 'btn btn-outline-light' %>
+</p>
+<table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th class="text-light">Name</th>
+      <th class="text-light" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td class="text-light"><%= category.name %></td>
+        <td>
+          <%= edit_category_link(category) %>
+          <%= delete_category_link(category) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

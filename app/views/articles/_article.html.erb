@@ -1,0 +1,12 @@
+<article class="blog-post bg-dark text-light p-4">
+    <h2 class="blog-post-title text-light"><%= article.title %></h2>
+    <p class="blog-post-meta text-light">
+        <%= render 'article_detail', article: article %>
+    </p>
+    <p class="text-light">
+        <%= truncate(article.body, length: 250) %><br/>
+        <%= link_to 'Continue reading...', article, class: 'btn btn-link text-light' %>
+    </p>
+    <%= edit_article_link(article) %>
+    <%= delete_article_link(article) %>
+</article>
